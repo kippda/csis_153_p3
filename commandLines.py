@@ -1,7 +1,18 @@
 #Valid SSN
 
-#Palindrome
-
+def isPalindrome(string):
+    """
+    Checks string and returns True is it's a palindrome
+    Otherwise returns False
+    """
+    tmpList = list(string)
+    tmpList.reverse()
+    backwards = ''.join(tmpList)
+    if string == backwards:
+        return(True)
+    return(False)
+    
+    
 def hasUppercase(string):
     """
     Checks string and returns True if at least one letter
@@ -30,5 +41,3 @@ def endsWithS(string):
     if string[-1].lower() == 's':
         return(True)
     return(False)
-
-
