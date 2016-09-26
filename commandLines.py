@@ -41,3 +41,31 @@ def endsWithS(string):
     if string[-1].lower() == 's':
         return(True)
     return(False)
+
+#create empty list for each thing we're checking
+ssnLst = []
+palinLst = []
+upCaseLst = []
+evenDigList = []
+sList = []
+
+#list for testing purposes
+lstOfStrings = ["111-22-3333", "racecar", "Hello", "1111", "12", "121", "racecars", "S"]
+
+for string in lstOfStrings:
+    #SSN
+    if isPalindrome(string) is True:
+        palinLst.append(string)
+    if hasUppercase(string) is True:
+        upCaseLst.append(string)
+    if hasEvenDigit(string) is True:
+        evenDigList.append(string)
+    if endsWithS(string) is True:
+        sList.append(string)
+
+#print(ssnLst)
+print(ssnLst)
+print(palinLst)
+print(upCaseLst)
+print(evenDigList)
+print(sList)
