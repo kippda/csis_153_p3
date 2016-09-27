@@ -11,3 +11,5 @@
 2016-09-26 2239: Added isValidSSN function
 
 2016-09-26 2320: Added proper documentation and improved formatting on final lists
+
+2016-09-26 2349: Takes input from command line
