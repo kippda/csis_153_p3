@@ -8,6 +8,8 @@ containing each string that meets the corresponding test
 __author__ = "Dane Kipp"
 __date__ = "2016-09-26"
 
+import sys
+
 def isValidSSN(string):
     """
     Checks string and returns True if it's a valid
@@ -63,39 +65,39 @@ def endsWithS(string):
         return True
     return False
 def main():
-
-    #create empty list for each thing we're checking
-    ssnLst = []
-    palinLst = []
-    upCaseLst = []
-    evenDigLst = []
-    sLst = []
-
     #list for testing purposes
-    argv = ["111-22-3333", "RacEcar", "Hello", "1111", "12", "121", "racecars", "S"]
+    #tmpStr = ["111-22-3333", "RacEcar", "Hello", "1111", "12", "121", "racecars", "S"]
 
-while argv < 2:
-    
-    #check argv to see if any strings meet the various parameters
-    for string in argv:
-        if isValidSSN(string) is True:
-            ssnLst.append(string)
-        if isPalindrome(string) is True:
-            palinLst.append(string)
-        if hasUppercase(string) is True:
-            upCaseLst.append(string)
-        if hasEvenDigit(string) is True:
-            evenDigLst.append(string)
-        if endsWithS(string) is True:
-            sLst.append(string)
+    if len(sys.argv) < 2:
+        print("Error: No input provided")
+    else:
+        tmpStr = sys.argv[1:]
 
-    #print the results of the testing
-    print('{:25s}'.format("Valid SSNs:"), ssnLst)
-    print('{:25s}'.format("Palindromes:"), palinLst)
-    print('{:25s}'.format("At least one Uppercase:"), upCaseLst)
-    print('{:25s}'.format("At least one even digit:"), evenDigLst)
-    print('{:25s}'.format("Ends with 's' or 'S':"), sLst)
+        ssnLst = []
+        palinLst = []
+        upCaseLst = []
+        evenDigLst = []
+        sLst = []
+        
+        #check tmpStr to see if any strings meet the various parameters
+        for string in tmpStr:
+            if isValidSSN(string) is True:
+                ssnLst.append(string)
+            if isPalindrome(string) is True:
+                palinLst.append(string)
+            if hasUppercase(string) is True:
+                upCaseLst.append(string)
+            if hasEvenDigit(string) is True:
+                evenDigLst.append(string)
+            if endsWithS(string) is True:
+                sLst.append(string)
+
+        #print the results of the testing
+        print('{:25s}'.format("Valid SSNs:"), ssnLst)
+        print('{:25s}'.format("Palindromes:"), palinLst)
+        print('{:25s}'.format("At least one Uppercase:"), upCaseLst)
+        print('{:25s}'.format("At least one even digit:"), evenDigLst)
+        print('{:25s}'.format("Ends with 's' or 'S':"), sLst)
 
 if __name__ == "__main__":
     main()
-
