@@ -7,3 +7,5 @@
 2016-09-25 1643: Added isPalindrome function
 
 2016-09-26 1028: Tracks and prints arguments that meet criteria
+
+2016-09-26 2239: Added isValidSSN function
